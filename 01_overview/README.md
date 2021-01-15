@@ -63,3 +63,32 @@ unit - tests written for standalone units of the code (e.g., function)
 integration
 
 system
+
+# Practical Example
+
+The data file is composed on x, y, z coordinates:
+
+```
+$ head -n 3 mydata.csv
+2.2, 3.4, 1.9
+-4.0, -0.2, 33.0
+1.1, 9.5, 5.4
+```
+
+The following code reads in a file 
+
+```python
+import pandas as pd
+
+def compute_min_distance_between_all_pairs(df):
+  return x - y
+
+if __name__ == "__main__":
+  df = pd.read_csv("myfile.dat")
+  min_dist = compute_min_distance_between_all_pairs(df):
+  print(f"The minimum distance between all pairs of points is {min_dist}")
+```
+
+```R
+library(csv)
+```
