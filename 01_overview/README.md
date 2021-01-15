@@ -71,7 +71,7 @@ The data file is composed on x, y, z coordinates:
 ```
 $ head -n 3 mydata.csv
 2.2, 3.4, 1.9
--4.0, -0.2, 33.0
+4.0, 0.2, 3.0
 1.1, 9.5, 5.4
 ```
 
