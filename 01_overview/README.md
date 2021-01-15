@@ -99,4 +99,4 @@ library(csv)
 
 How can we write code to test the correctness of `compute_min_distance_between_all_pairs`? See the next section where the Python `unittest` module is discussed.
 
-If people can't write the main code without errors then why should they be trusted to write the test code? Should there be test code for the for the test code?
+If people can't write the main code without errors then why should they be trusted to write the test code? Should there be test code for the test code?
