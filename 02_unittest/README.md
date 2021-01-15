@@ -17,10 +17,11 @@ assert f(1, 2) == 3
 
 ## unittest from the Python Standard Library
 
-A good starting point for  unit testing is the the `unittest` module of the Python Standard Library. If you have Python installed then you have
+A good starting point for unit testing is the the [`unittest`](https://docs.python.org/3/library/unittest.html) module of the Python Standard Library. If you have Python installed then you have
 this module.
 
 ```
+$ module load anaconda3
 $ python
 >>> import unittest
 ```
