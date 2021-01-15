@@ -4,6 +4,7 @@ This workshop is designed for anyone doing computational research that writes so
 
 Don't try to become a professional software tester but if you are writing code toward software projects or writing data analysis code then you should spend some time writing tests for the software you write.
 
+In short, testing is about the actual outputs agreeing with the expected outputs.
 
 # Reasons to write tests
 
@@ -37,3 +38,28 @@ If you can't write tests for your code then the structure and design choices of 
 ## A test suite makes debugging easier
 
 If you have a battery of tests for a certain piece of code then when a bug arises you can run the test suite to rule out potential problems.
+
+# Example
+
+For an example of unit testing, consider the simple example below:
+
+```
+def f(a, b):
+  return a + b
+```
+
+Here are the expected results:
+
+```
+f(1, 2) = 3
+f(1, 2.0) = 3.0
+f(-1, 1) = 0
+```
+
+Heirarchy of Tests
+
+unit - tests written for standalone units of the code (e.g., function)
+
+integration
+
+system
