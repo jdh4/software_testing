@@ -1,7 +1,7 @@
 # Unit Testing
 
 Unit testing involves writing tests for standalone units of code such as a function. You could write your own testing framework maybe
-using the `assert` statement but it is better to use something that already exists.
+using the `assert` statement but it is better to use a framework that already exists.
 
 
 # Self-written Test
