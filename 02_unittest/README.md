@@ -15,6 +15,11 @@ def f(a, b):
 assert f(1, 2) == 3
 ```
 
+### Validation vs. Verification
+
+Verification involves not executing the code whereas validation does.
+
+
 ## unittest from the Python Standard Library
 
 A good starting point for unit testing is the the [`unittest`](https://docs.python.org/3/library/unittest.html) module of the Python Standard Library. If you have Python installed then you have
@@ -33,6 +38,6 @@ Note: It is common to feel like you are making up tests that will obviously work
 Terminology: White box testing is when you write tests for code that you can see.
 
 
-## Appendix
+## doctest
 
-You can also put your testing inside the doc strings of code and have them run.
+There is a fundamentally different approach to testing using the [`doctest`](https://docs.python.org/3/library/doctest.html) module. This involves writing tests inside the docstrings and then executing these tests. The advantage of this approach is it combines writing documentaion with testing. Both of these tend to get neglected. For researchers who are trying to write some tests and some documentation this may be the best approach for you.
