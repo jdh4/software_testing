@@ -96,3 +96,5 @@ if __name__ == "__main__":
 ```R
 library(csv)
 ```
+
+How can we write code to test the correctness of `compute_min_distance_between_all_pairs`? See the next section where the Python `unittest` module is discussed.
