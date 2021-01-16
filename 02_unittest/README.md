@@ -212,6 +212,13 @@ ok
 Test passed.
 ```
 
+### More features of doctest
+
++ You can put the tests in a text file: `$ python -m doctest -v mytests.txt`
++ Imported modules are not searched for tests
++ ''In most cases a copy-and-paste of an interactive console session works fine, but doctest isn’t trying to do an exact emulation of any specific Python shell.''
+
+
 ### Exercise
 
 Try writing tests using [`doctest`](https://docs.python.org/3/library/doctest.html) for a piece of code you use for your research or write tests for the code below:
