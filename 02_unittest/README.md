@@ -42,6 +42,8 @@ Terminology: White box testing is when you write tests for code that you can see
 
 There is a fundamentally different approach to testing using the [`doctest`](https://docs.python.org/3/library/doctest.html) module. This involves writing tests inside the docstrings and then executing these tests. The advantage of this approach is it combines writing documentaion with testing. Both of these tend to get neglected. For researchers who are trying to write some tests and some documentation this may be the best approach for you.
 
+#### Example 1
+
 ```python
 """
 This is the "example" module.
@@ -156,6 +158,8 @@ ok
 7 passed and 0 failed.
 Test passed.
 ```
+
+#### Example 2
 
 Here's another example where a list of two-tuples is sorted according to a custom criteria:
 
