@@ -156,3 +156,48 @@ ok
 7 passed and 0 failed.
 Test passed.
 ```
+
+Here's another example where a list of two-tuples is sorted according to a custom criteria:
+
+```python
+def custom_sort(x):
+  """Return sorted list of two-tuples by first item plus square of second item.
+
+  >>> custom_sort([(3, 2), (5, 1), (1, 2)])
+  [(1, 2), (5, 1), (3, 2)]
+
+  >>> custom_sort([(1, 2), (0, 1), (3, 2)])
+  [(0, 1), (1, 2), (3, 2)]
+
+  >>> custom_sort([])
+  []
+  """
+
+  return sorted(x, key=lambda u: u[0] + u[1]**2)
+```
+
+```
+$ python -m doctest example2.py -v
+Trying:
+    custom_sort([(3, 2), (5, 1), (1, 2)])
+Expecting:
+    [(1, 2), (5, 1), (3, 2)]
+ok
+Trying:
+    custom_sort([(1, 2), (0, 1), (3, 2)])
+Expecting:
+    [(0, 1), (1, 2), (3, 2)]
+ok
+Trying:
+    custom_sort([])
+Expecting:
+    []
+ok
+1 items had no tests:
+    best
+1 items passed all tests:
+   3 tests in best.custom_sort
+3 tests in 2 items.
+3 passed and 0 failed.
+Test passed.
+```
