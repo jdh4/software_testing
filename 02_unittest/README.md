@@ -159,7 +159,7 @@ ok
 Test passed.
 ```
 
-The `if __name__ == "__main__"` statement is not necessary. That is, once can also run the tests under doctest with this command:
+It is not necessary to include the `if __name__ == "__main__"` block. That is, one can also run the tests under doctest with this command:
 
 ```
 $ python -m doctest example.py -v
