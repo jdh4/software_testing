@@ -211,3 +211,12 @@ ok
 3 passed and 0 failed.
 Test passed.
 ```
+
+### Exercise
+
+Try writing tests using [`doctest`](https://docs.python.org/3/library/doctest.html) for a piece of code you use for your research or write tests for the code below:
+
+```
+def func(a, b):
+  # some work
+```
