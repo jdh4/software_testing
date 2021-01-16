@@ -159,6 +159,12 @@ ok
 Test passed.
 ```
 
+The `if __name__ == "__main__"` statement is not necessary. That is, once can also run the tests under doctest with this command:
+
+```
+$ python -m doctest example.py -v
+```
+
 #### Example 2
 
 Here's another example where a list of two-tuples is sorted according to a custom criteria:
