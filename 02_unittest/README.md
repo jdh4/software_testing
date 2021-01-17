@@ -181,6 +181,10 @@ def custom_sort(x):
 
   >>> custom_sort([])
   []
+  
+  >>> custom_sort(42)
+  Traceback (most recent call last):
+  TypeError: 'int' object is not iterable
   """
 
   return sorted(x, key=lambda u: u[0] + u[1]**2)
@@ -203,14 +207,24 @@ Trying:
 Expecting:
     []
 ok
+Trying:
+    custom_sort(42)
+Expecting:
+    Traceback (most recent call last):
+    TypeError: 'int' object is not iterable
+ok
 1 items had no tests:
     best
 1 items passed all tests:
-   3 tests in best.custom_sort
-3 tests in 2 items.
-3 passed and 0 failed.
+   4 tests in best.custom_sort
+4 tests in 2 items.
+4 passed and 0 failed.
 Test passed.
 ```
+
+#### About testing for exceptions
+
+doctest will not try to compare the exact backtrace of the exception with the test version. This is because the backtrace often contains custom file paths. Instead it looks for the `Traceback` starting line and the type of exception. You could also use the full exception.
 
 ### More features of doctest
 
