@@ -184,6 +184,7 @@ def custom_sort(x):
   
   >>> custom_sort(42)
   Traceback (most recent call last):
+      ...
   TypeError: 'int' object is not iterable
   """
 
