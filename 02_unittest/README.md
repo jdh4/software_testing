@@ -235,6 +235,7 @@ doctest will not try to compare the exact traceback of the exception with the te
 
 
 [https://pymotw.com/2/doctest/](https://pymotw.com/2/doctest/)
+[https://pymotw.com/3/doctest/](https://pymotw.com/3/doctest/)
 
 ### Exercise
 
