@@ -224,7 +224,7 @@ Test passed.
 
 #### About testing for exceptions
 
-doctest will not try to compare the exact backtrace of the exception with the test version. This is because the backtrace often contains custom file paths. Instead it looks for the `Traceback` starting line and the type of exception. You could also use the full exception.
+doctest will not try to compare the exact traceback of the exception with the test version. This is because the traceback often contains custom file paths. Instead it looks for the `Traceback` starting line and the type of exception. You could also use the full exception.
 
 ### More features of doctest
 
