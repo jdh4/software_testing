@@ -234,6 +234,8 @@ doctest will not try to compare the exact traceback of the exception with the te
 + ''In most cases a copy-and-paste of an interactive console session works fine, but doctest isn’t trying to do an exact emulation of any specific Python shell.''
 
 
+[https://pymotw.com/2/doctest/](https://pymotw.com/2/doctest/)
+
 ### Exercise
 
 Try writing tests using [`doctest`](https://docs.python.org/3/library/doctest.html) for a piece of code you use for your research or write tests for the code below:
