@@ -6,6 +6,19 @@ Don't try to become a professional software tester but if you are writing code t
 
 In short, testing is about the actual outputs agreeing with the expected outputs.
 
+Here is a function and a few associated tests:
+
+```
+def f(a, b):
+  return a + b
+
+assert f(1, 2) == 3
+assert f(1, -1) == 0
+assert f(['cat'], ['dog']) == ['cat', 'dog']
+```
+
+The above should be thought of as a pseudo-code exmaple. We will demonstrate multiple testing frameworks in this workshop.
+
 # Reasons to write tests
 
 ## It is easy to make mistakes
@@ -47,18 +60,7 @@ While version control provides a record of all the states of the code and the ch
 
 For an example of unit testing, consider the simple example below:
 
-```
-def f(a, b):
-  return a + b
-```
 
-Here are the expected results:
-
-```
-f(1, 2) = 3
-f(1, 2.0) = 3.0
-f(-1, 1) = 0
-```
 
 Heirarchy of Tests
 
