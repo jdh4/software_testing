@@ -8,7 +8,7 @@ In short, testing is about the actual outputs agreeing with the expected outputs
 
 Here is a function and a few associated tests:
 
-```
+```python
 def f(a, b):
   return a + b
 
