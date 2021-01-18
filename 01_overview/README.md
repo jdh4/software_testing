@@ -14,6 +14,7 @@ def f(a, b):
 
 assert f(1, 2) == 3
 assert f(1, -1) == 0
+assert f(1, 2 + 1j) == 3 + 1j
 assert f(['cat'], ['dog']) == ['cat', 'dog']
 ```
 
