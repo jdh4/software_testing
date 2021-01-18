@@ -21,7 +21,7 @@ The above should be thought of as a pseudo-code exmaple. We will demonstrate mul
 
 # Reasons to write tests
 
-* It is easy to make mistakes  
+#### It is easy to make mistakes  
 
 C/C++ allow for assignment in an if statement:
 
@@ -40,7 +40,7 @@ a / b  # equals 0 in Python 2
 a / b  # equals 0.5 in Python 3
 ```
 
-* Inspire confidence
+#### Inspire confidence
 
 By writing a test suite you will have confidence that at least all the test will run. Running the test suite is usually the first thing to do when a bug is found.
 
