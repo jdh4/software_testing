@@ -27,7 +27,7 @@ Terminology: White box testing is when you write tests for code that you can see
 
 # Example
 
-Consider a simple implemenation of a function to compute the area of a circle:
+Consider a simple implemenation of a function to compute the area of a circle (based on this Socratica [video](https://www.youtube.com/watch?v=1Lfv5tUGsn8)):
 
 ```python
 import math
