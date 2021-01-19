@@ -106,3 +106,10 @@ Ran 1 test in 0.000s
 
 OK
 ```
+
+Add the `-v` flag for verbose output:
+
+```
+$ python -m unittest test_circle_area.py -v
+```
+
