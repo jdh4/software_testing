@@ -1,4 +1,4 @@
-# Unit Testing
+# Unit Testing with unittest
 
 Unit testing involves writing tests for standalone units of code such as a function. You could write your own testing framework maybe
 using the `assert` statement but it is better to use a framework that already exists.
@@ -34,9 +34,18 @@ import math
 
 def circle_area(radius):
   return math.pi * radius**2
+```
 
-trials = [2, 0, -3, 2 + 5j, True, "cat"]
-for radius in trials:
+Let's test this script against different input values for radius:
+
+```python
+import math
+
+def circle_area(radius):
+  return math.pi * radius**2
+
+radius_values = [2, 0, -3, 2 + 5j, True, "cat"]
+for radius in radius_values:
   area = circle_area(radius)
   print(f"Area of circle with radius={radius} is {area}")
 ```
