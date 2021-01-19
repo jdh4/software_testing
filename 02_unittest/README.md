@@ -99,5 +99,10 @@ test_circle_area.py
 To run the tests:
 
 ```
-$ python test_circle_area.py
+$ python -m unittest test_circle_area.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
 ```
