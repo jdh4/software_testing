@@ -22,7 +22,7 @@ The above should be thought of as a pseudo-code exmaple. We will demonstrate mul
 
 # Reasons to write tests
 
-#### *It is easy to make mistakes*
+#### *Mistakes are easy to make*
 
 C/C++ allow for assignment in an if statement:
 
