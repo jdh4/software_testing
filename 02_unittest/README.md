@@ -67,3 +67,37 @@ Traceback (most recent call last):
     return math.pi * radius**2
 TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
 ```
+
+The function produces nonsensical output for the last four inputs. Note that if someone accidentally used `True` as an input the code would not fail. Can we improve on our function to make it more robust? Let's also write a series of tests to make sure the mistakes highlighted in the example above are caught by the program.
+
+## Your first unit tests
+
+The tests will be stored in a separate file. Create the file for the unit tests with the filename `test_circle_area.py`. It is conventional to prepend `test_` to the name of the original source file. Here are the contents of `test_circle_area.py`:
+
+```python
+import unittest
+from circle_area import circle_area
+import math
+
+class TestCircleArea(unittest.TestCase):
+    def test_area(self):
+        # test areas when radius >= 0
+        self.assertAlmostEqual(circle_area(1), math.pi)
+        self.assertAlmostEqual(circle_area(0), 0)
+        self.assertAlmostEqual(circle_area(2.1), math.pi * 2.1**2)
+```
+
+One can see that we wrote a class that derives from `unittest.TestCase`. We then write three simple unit tests to check cases where the radius value is greater than or equal to zero.
+
+We now have two files:
+
+```
+circle_area.py
+test_circle_area.py
+```
+
+To run the tests:
+
+```
+$ python test_circle_area.py
+```
