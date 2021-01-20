@@ -87,7 +87,7 @@ class TestCircleArea(unittest.TestCase):
         self.assertAlmostEqual(circle_area(2.1), math.pi * 2.1**2)
 ```
 
-One can see that we wrote a class that derives from `unittest.TestCase`. We then write three simple unit tests to check cases where the radius value is greater than or equal to zero.
+One can see that we wrote a class that derives from `unittest.TestCase`. We then write three simple unit tests to check cases where the radius value is greater than or equal to zero. Your test must begin with `test_`. Unit tests will be ignored if they don't follow that convention, which is good if you need a helper method for one of the test functions.
 
 We now have two files:
 
@@ -106,6 +106,9 @@ Ran 1 test in 0.000s
 
 OK
 ```
+
+The `.` in the first line of output implies success of one test. While there are three assert methods, these are regarded as a single test.
+
 
 Add the `-v` flag for verbose output:
 
@@ -228,4 +231,16 @@ OK
 
 We see all the tests pass. Our source has been much improved.
 
-For all the different assert methods see the documentation.
+## Exercise
+
+Create a file called `circle_radius.py` that defines a function `circle_radius` that returns the radius of a circle given the area. Then create a second file called `test_circle_radius.py` for the unittests.
+
+
+## Example 2
+
+Method must start with test_
+
+
+
+
+For all the different assert methods see the documentation. Here are the [most popular](https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug) methods.
