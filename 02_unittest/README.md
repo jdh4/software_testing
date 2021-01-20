@@ -235,6 +235,7 @@ We see all the tests pass. Our source has been much improved.
 
 Create a file called `circle_radius.py` that defines a function `circle_radius` that returns the radius of a circle given the area. Then create a second file called `test_circle_radius.py` for the unittests.
 
+If you finish early then start writing unit tests for the scripts for your research work.
 
 ## Example 2
 
