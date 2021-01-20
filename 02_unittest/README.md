@@ -115,7 +115,7 @@ $ python -m unittest test_circle_area.py -v
 
 Return to the source code (`circle_area.py`) and handle the case of a negative area:
 
-```
+```python
 def circle_area(radius):
     if radius < 0:
         raise ValueError("The radius cannot be negative.")   
@@ -181,7 +181,7 @@ class TestCircleArea(unittest.TestCase):
 
 Run the unittests:
 
-```python
+```
 $ python -m unittest test_circle_area.py -v
 test_area (test_circle_area.TestCircleArea) ... ok
 test_types (test_circle_area.TestCircleArea) ... FAIL
@@ -203,7 +203,7 @@ FAILED (failures=1)
 
 We see that there is a failure. Let's modify our source code so that the tests succeed:
 
-```
+```python
 def circle_area(radius):
     if radius < 0:
         raise ValueError("The radius cannot be negative.")
