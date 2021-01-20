@@ -89,6 +89,8 @@ class TestCircleArea(unittest.TestCase):
 
 One can see that we wrote a class that derives from `unittest.TestCase`. We then write three simple unit tests to check cases where the radius value is greater than or equal to zero. Your test must begin with `test_`. Unit tests will be ignored if they don't follow that convention, which is good if you need a helper method for one of the test functions.
 
+For all the different assert methods see the documentation. Here are the [most popular](https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug) methods.
+
 We now have two files:
 
 ```
@@ -448,8 +450,8 @@ Ran 2 tests in 0.000s
 OK
 ```
 
-In the above nothing was done in `setUpClass()` or `tearDownClass()`. An example of using `setUpClass()` would be connecting to a database or generating a large file.
+In the above nothing was done in `setUpClass()` or `tearDownClass()`. An example of using `setUpClass()` would be connecting to a database or generating a large file. For more details on the material above see the ([video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer.
 
-For more details see the ([video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer)
+## Exercise 2
 
-For all the different assert methods see the documentation. Here are the [most popular](https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug) methods.
+Add `setUp()`, `tearDown()`, `setUpClass()` and `tearDownClass()` to the tests of `circle_radius.py`.
