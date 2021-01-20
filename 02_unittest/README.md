@@ -457,3 +457,48 @@ In the above nothing was done in `setUpClass()` or `tearDownClass()`. An example
 ## Exercise 2
 
 Add `setUp()`, `tearDown()`, `setUpClass()` and `tearDownClass()` to the tests of `circle_radius.py`. Or apply these methods to the tests of the scripts for your research work.
+
+## Running multiple test files with TestSuite
+
+Above we consider the source code `shapes.py` and the corresponding unit tests in `test_shapes.py`. What if your project is composed of multiple files? How can you execute all the tests at once? The idea is to create a `TestSuite` and a `TestRunner` to run all the tests at once.
+
+Here are the contents of `runner.py`:
+
+```python
+import unittest
+import test_shapes
+import test_sizes
+
+loader = unittest.TestLoader()
+suite = unittest.TestSuite()
+
+suite.addTests(loader.loadTestsFromModule(test_shapes))
+suite.addTests(loader.loadTestsFromModule(test_sizes))
+
+runner = unittest.TextTestRunner(verbosity=3)
+result = runner.run(suite)
+```
+
+Run all the tests with:
+
+```
+$ python runner.py
+setUpClass
+test_area (test_shapes.TestCircle) ... setUp
+test_area
+tearDown
+
+ok
+test_colors (test_shapes.TestCircle) ... setUp
+test_colors
+tearDown
+
+ok
+teardownClass
+test_thres (test_sizes.TestThresholds) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+```
