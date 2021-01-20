@@ -237,9 +237,9 @@ Create a file called `circle_radius.py` that defines a function `circle_radius` 
 
 If you finish early then start writing unit tests for the scripts for your research work.
 
-## Example 2
+## setUp and tearDown
 
-This section will illustrate the idea of setUp and tearDown operations. Let's write tests for the following class:
+This section will illustrate the idea of `setUp()` and `tearDown()` operations. Let's write tests for the following class:
 
 ```python
 import math
