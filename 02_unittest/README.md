@@ -460,7 +460,7 @@ Add `setUp()`, `tearDown()`, `setUpClass()` and `tearDownClass()` to the tests o
 
 ## Running multiple test files with TestSuite
 
-Above we consider the source code `shapes.py` and the corresponding unit tests in `test_shapes.py`. What if your project is composed of multiple files? How can you execute all the tests at once? The idea is to create a `TestSuite` and a `TestRunner` to run all the tests at once.
+Above we consider the source code `shapes.py` and the corresponding unit tests in `test_shapes.py`. What if your project is composed of multiple files such as `shapes.py` and `sizes.py`? How can you execute all the tests at once? The idea is to create a `TestSuite` and a `TestRunner` to run all the tests at once.
 
 Here are the contents of `runner.py`:
 
