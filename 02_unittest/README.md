@@ -237,7 +237,7 @@ Create a file called `circle_radius.py` that defines a function `circle_radius` 
 
 If you finish early then start writing unit tests for the scripts for your research work.
 
-## setUp and tearDown
+## setUp() and tearDown()
 
 This section will illustrate the idea of `setUp()` and `tearDown()` operations. Consider the following class:
 
@@ -383,7 +383,7 @@ Ran 2 tests in 0.000s
 OK
 ```
 
-## setUpClass and tearDownClass
+## setUpClass() and tearDownClass()
 
 We saw above that `setUp()` and `tearDown()` run for each test. In some cases you will want to perform some operations once before all the tests and once after all the tests. For this the `setUpClass()` and `tearDownClass()` methods can be used:
 
