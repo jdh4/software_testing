@@ -239,10 +239,97 @@ If you finish early then start writing unit tests for the scripts for your resea
 
 ## Example 2
 
-Method must start with test_
+This section will illustrate the idea of setUp and tearDown operations. Let's write tests for the following class:
+
+```python
+import math
+
+class Circle:
+
+    def __init__(self, radius, color):
+        self.radius = radius
+        self.color = color
+
+    def compute_area(self):
+        return math.pi * self.radius**2
+
+    def change_color(self, new_color):
+        self.color = new_color
+```
+
+You might naively begin with unit tests like the following:
+
+```python
+import unittest
+from shapes import Circle
+import math
+
+class TestCase1(unittest.TestCase):
+
+    def test_colors(self):
+        c1 = Circle(3, "red")
+        c2 = Circle(5, "green")
+
+        self.assertEqual(c1.color, "red")
+        self.assertEqual(c2.color, "green")
+
+        c1.change_color("blue")
+        c2.change_color("blue")
+        self.assertEqual(c1.color, "blue")
+        self.assertEqual(c2.color, "blue")
+
+    def test_area(self):
+        c1 = Circle(3, "red")
+        c2 = Circle(5, "green")
+
+        self.assertAlmostEqual(c1.compute_area(), math.pi * 3**2)
+        self.assertAlmostEqual(c2.compute_area(), math.pi * 5**2)
+```
+
+The above set of tests is reasonble but we can do better by recognizing that both tests create the same Circle objects. If the initialization methods changes (maybe by adding a third required parameter) then changes must be made to both tests. The Python unittest module provides the `setUp()` and `tearDown()` methods for dealing with this.
+
+```python
+import unittest
+from shapes import Circle
+import math
+
+class TestCase1(unittest.TestCase):
+
+    def setUp(self):
+        self.c1 = Circle(3, "red")
+        self.c2 = Circle(5, "green")
+      
+    def test_colors(self):
+        self.assertEqual(self.c1.color, "red")
+        self.assertEqual(self.c2.color, "green")
+
+        self.c1.change_color("blue")
+        self.c2.change_color("blue")
+        self.assertEqual(self.c1.color, "blue")
+        self.assertEqual(self.c2.color, "blue")
+
+    def test_area(self):
+        self.assertAlmostEqual(self.c1.compute_area(), math.pi * 3**2)
+        self.assertAlmostEqual(self.c2.compute_area(), math.pi * 5**2)
+
+    def tearDown(self):
+        pass
+```
 
 
-([video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer)
+
+```
+$ python -m unittest test_shapes.py -v
+test_area (test_shapes.TestCase1) ... ok
+test_colors (test_shapes.TestCase1) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+```
+
+For more details see the ([video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer)
 
 
 For all the different assert methods see the documentation. Here are the [most popular](https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug) methods.
