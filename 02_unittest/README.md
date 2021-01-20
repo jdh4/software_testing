@@ -113,3 +113,119 @@ Add the `-v` flag for verbose output:
 $ python -m unittest test_circle_area.py -v
 ```
 
+Return to the source code (`circle_area.py`) and handle the case of a negative area:
+
+```
+def circle_area(radius):
+    if radius < 0:
+        raise ValueError("The radius cannot be negative.")   
+    return math.pi * radius**2
+```
+
+Let's add an additional test to handle erroneous values:
+
+```python
+import unittest
+from circle_area import circle_area
+import math
+
+class TestCircleArea(unittest.TestCase):
+    def test_area(self):
+        # test areas when radius >= 0
+        self.assertAlmostEqual(circle_area(1), math.pi)
+        self.assertAlmostEqual(circle_area(0), 0)
+        self.assertAlmostEqual(circle_area(2.1), math.pi * 2.1**2)
+        
+    def test_values(self):
+        # raise value error when radius is negative
+        self.assertRaises(ValueError, circle_area, -2)
+```
+
+Once again run the tests:
+
+```
+$ python -m unittest test_circle_area.py -v
+test_area (test_circle_area.TestCircleArea) ... ok
+test_values (test_circle_area.TestCircleArea) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+```
+
+Lastly, let's handle type errors such as complex numbers and booleans:
+
+```python
+import unittest
+from circle_area import circle_area
+import math
+
+class TestCircleArea(unittest.TestCase):
+    def test_area(self):
+        # test areas when radius >= 0
+        self.assertAlmostEqual(circle_area(1), math.pi)
+        self.assertAlmostEqual(circle_area(0), 0)
+        self.assertAlmostEqual(circle_area(2.1), math.pi * 2.1**2)
+        
+    def test_values(self):
+        # raise value error when radius is negative
+        self.assertRaises(ValueError, circle_area, -2)
+        
+    def test_types(self):
+        # handle type errors
+        self.assertRaises(TypeError, circle_area, 3+5j)
+        self.assertRaises(TypeError, circle_area, True)
+        self.assertRaises(TypeError, circle_area, "cat")
+```
+
+Run the unittests:
+
+```python
+$ python -m unittest test_circle_area.py -v
+test_area (test_circle_area.TestCircleArea) ... ok
+test_types (test_circle_area.TestCircleArea) ... FAIL
+test_values (test_circle_area.TestCircleArea) ... ok
+
+======================================================================
+FAIL: test_types (test_circle_area.TestCircleArea)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/scratch/gpfs/jdh4/TESTING/test_circle_area.py", line 19, in test_types
+    self.assertRaises(TypeError, circle_area, True)
+AssertionError: TypeError not raised by circle_area
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+FAILED (failures=1)
+```
+
+We see that there is a failure. Let's modify our source code so that the tests succeed:
+
+```
+def circle_area(radius):
+    if radius < 0:
+        raise ValueError("The radius cannot be negative.")
+    if not type(radius) in [int, float]:
+        raise TypeError(f"The radius is not an int or float.")
+    return math.pi * radius**2
+```
+
+Now run the unit tests:
+
+```
+$ python -m unittest test_circle_area.py -v
+test_area (test_circle_area.TestCircleArea) ... ok
+test_types (test_circle_area.TestCircleArea) ... ok
+test_values (test_circle_area.TestCircleArea) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+```
+
+We see all the tests pass. Our source has been much improved.
+
+For all the different assert methods see the documentation.
