@@ -450,8 +450,8 @@ Ran 2 tests in 0.000s
 OK
 ```
 
-In the above nothing was done in `setUpClass()` or `tearDownClass()`. An example of using `setUpClass()` would be connecting to a database or generating a large file. For more details on the material above see the ([video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer.
+In the above nothing was done in `setUpClass()` or `tearDownClass()`. An example of using `setUpClass()` would be connecting to a database or generating a large file. For more details on the material above see the [video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer.
 
 ## Exercise 2
 
-Add `setUp()`, `tearDown()`, `setUpClass()` and `tearDownClass()` to the tests of `circle_radius.py`.
+Add `setUp()`, `tearDown()`, `setUpClass()` and `tearDownClass()` to the tests of `circle_radius.py`. Or apply these methods to the tests of the scripts for your research work.
