@@ -148,6 +148,15 @@ class TestCircleArea(unittest.TestCase):
         self.assertRaises(ValueError, circle_area, -2)
 ```
 
+You could also write the new test as:
+
+```python
+    def test_values(self):
+        # raise value error when radius is negative
+        with self.assertRaises(ValueError):
+            circle_area(-2)
+```
+
 Once again run the tests:
 
 ```
