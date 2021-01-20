@@ -239,7 +239,7 @@ If you finish early then start writing unit tests for the scripts for your resea
 
 ## setUp and tearDown
 
-This section will illustrate the idea of `setUp()` and `tearDown()` operations. Let's write tests for the following class:
+This section will illustrate the idea of `setUp()` and `tearDown()` operations. Consider the following class:
 
 ```python
 import math
@@ -264,7 +264,7 @@ import unittest
 from shapes import Circle
 import math
 
-class TestCase1(unittest.TestCase):
+class TestCircle(unittest.TestCase):
 
     def test_colors(self):
         c1 = Circle(3, "red")
@@ -293,12 +293,13 @@ import unittest
 from shapes import Circle
 import math
 
-class TestCase1(unittest.TestCase):
+class TestCircle(unittest.TestCase):
 
     def setUp(self):
+        # do setup operations here for each test
         self.c1 = Circle(3, "red")
         self.c2 = Circle(5, "green")
-      
+        
     def test_colors(self):
         self.assertEqual(self.c1.color, "red")
         self.assertEqual(self.c2.color, "green")
@@ -313,10 +314,11 @@ class TestCase1(unittest.TestCase):
         self.assertAlmostEqual(self.c2.compute_area(), math.pi * 5**2)
 
     def tearDown(self):
+        # do teardown operations here for each test
         pass
 ```
 
-
+Now run the tests:
 
 ```
 $ python -m unittest test_shapes.py -v
@@ -336,9 +338,10 @@ import unittest
 from shapes import Circle
 import math
 
-class TestCase1(unittest.TestCase):
+class TestCircle(unittest.TestCase):
 
     def setUp(self):
+        # do setup operations here for each test
         print("setUp")
         self.c1 = Circle(3, "red")
         self.c2 = Circle(5, "green")
@@ -359,6 +362,7 @@ class TestCase1(unittest.TestCase):
         self.assertAlmostEqual(self.c2.compute_area(), math.pi * 5**2)
 
     def tearDown(self):
+        # do teardown operations here for each test
         print("tearDown")
 ```
 
@@ -379,7 +383,73 @@ Ran 2 tests in 0.000s
 OK
 ```
 
-For more details see the ([video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer)
+## setUpClass and tearDownClass
 
+We saw above that `setUp()` and `tearDown()` run for each test. In some cases you will want to perform some operations once before all the tests and once after all the tests. For this the `setUpClass()` and `tearDownClass()` methods can be used:
+
+```python
+import unittest
+from shapes import Circle
+import math
+
+class TestCircle(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        # do setup operations here for all tests once
+        print("setUpClass")
+    
+    def setUp(self):
+        # do setup operations here for each test
+        self.c1 = Circle(3, "red")
+        self.c2 = Circle(5, "green")
+        
+    def test_colors(self):
+        self.assertEqual(self.c1.color, "red")
+        self.assertEqual(self.c2.color, "green")
+
+        self.c1.change_color("blue")
+        self.c2.change_color("blue")
+        self.assertEqual(self.c1.color, "blue")
+        self.assertEqual(self.c2.color, "blue")
+
+    def test_area(self):
+        self.assertAlmostEqual(self.c1.compute_area(), math.pi * 3**2)
+        self.assertAlmostEqual(self.c2.compute_area(), math.pi * 5**2)
+
+    def tearDown(self):
+        # do teardown operations here for each test
+        pass
+        
+   @classmethod
+    def tearDownClass(cls):
+        # do teardown operations here for all tests once
+        print("teardownClass")
+```
+
+By running the tests we see the order in which the various functions are executed:
+
+```
+$ python -m unittest test_shapes.py
+setUpClass
+setUp
+test_area
+tearDown
+
+.setUp
+test_colors
+tearDown
+
+.teardownClass
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+```
+
+In the above nothing was done in `setUpClass()` or `tearDownClass()`. An example of using `setUpClass()` would be connecting to a database or generating a large file.
+
+For more details see the ([video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer)
 
 For all the different assert methods see the documentation. Here are the [most popular](https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug) methods.
