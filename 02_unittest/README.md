@@ -242,6 +242,7 @@ If you finish early then start writing unit tests for the scripts for your resea
 Method must start with test_
 
 
+([video](https://www.youtube.com/watch?v=6tNS--WetLI) by Corey Schafer)
 
 
 For all the different assert methods see the documentation. Here are the [most popular](https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug) methods.
