@@ -91,6 +91,8 @@ One can see that we wrote a class that derives from `unittest.TestCase`. We then
 
 For all the different assert methods see the documentation. Here are the [most popular](https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug) methods.
 
+Note that this is an example of white box testing where we can inspect the code that we are writing the tests for. Black box testing is when tests are written when the code is not available. Test-driven development is an example of black box testing since the tests are written before the code is written.
+
 We now have two files:
 
 ```
