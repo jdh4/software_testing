@@ -7,8 +7,9 @@ testing looks at other aspects such as computational complexity, scalability, et
 
 Consider the simple code below:
 
-```
+```python
 N = 1000
+x = [random() for _ in range(N)]
 for i in range(N):
     x_sum += x[i]
 ```
@@ -18,9 +19,10 @@ and so does the execution time of the code. That is, if N is double the code req
 
 What about this example?
 
-```
-x_min = 0.0
+```python
 N = 1000
+x = [random() for _ in range(N)]
+x_min = 0.0
 for i in range(N - 1):
     for j in range(i + 1, N):
         xij = abs(x[i] - x[j])
@@ -28,6 +30,8 @@ for i in range(N - 1):
 ```
 
 ## Python sort
+
+What is the computational complexity of Python's built-in sort function?
 
 ```python
 from random import random
