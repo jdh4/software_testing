@@ -200,8 +200,6 @@ doctest will not try to compare the exact traceback of the exception with the te
 
 Check out the examples here: [https://pymotw.com/3/doctest/](https://pymotw.com/3/doctest/)
 
-<a href="https://pymotw.com/3/doctest/" target="_blank">external link</a>
-
 ### Exercise
 
 Try writing tests using [`doctest`](https://docs.python.org/3/library/doctest.html) for a piece of code you use for your research or write tests for the code below:
