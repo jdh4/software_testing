@@ -2,7 +2,7 @@
 
 Everything up to this point has been functional testing where we have looked to see if the outputs agree with the expected outputs. Non-functional testing looks at other aspects such as computational complexity, scalability, etc.
 
-## Computation complexity
+## Computational complexity in runtime and memory
 
 Consider the simple code below:
 
