@@ -202,9 +202,11 @@ Check out the examples here: [https://pymotw.com/3/doctest/](https://pymotw.com/
 
 ### Exercise
 
-Try writing tests using [`doctest`](https://docs.python.org/3/library/doctest.html) for a piece of code you use for your research or write tests for the code below:
+Try writing tests using [`doctest`](https://docs.python.org/3/library/doctest.html) for the code below for for a piece of code you use for your research:
 
 ```
-def func(a, b):
-  # some work
+import math
+
+def circle_area(radius):
+    return math.pi * radius**2
 ```
