@@ -4,7 +4,7 @@ Boost.Test is a popular framework for writing tests for C++ code.
 
 ## Della
 
-See the documentation for [version 1.73](https://www.boost.org/doc/libs/1_73_0/libs/test/doc/html/boost_test/intro.html). Consider the following simple test (`test_file.cpp`):
+See the documentation for [version 1.73](https://www.boost.org/doc/libs/1_73_0/libs/test/doc/html/index.html). Consider the following simple test (`test_file.cpp`):
 
 ```C++
 #define BOOST_TEST_MODULE My Test
