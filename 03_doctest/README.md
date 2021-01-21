@@ -196,9 +196,9 @@ doctest will not try to compare the exact traceback of the exception with the te
 + Imported modules are not searched for tests
 + ''In most cases a copy-and-paste of an interactive console session works fine, but doctest isn’t trying to do an exact emulation of any specific Python shell.''
 
+### Python 3 Module of the Week
 
-[https://pymotw.com/2/doctest/](https://pymotw.com/2/doctest/)
-[https://pymotw.com/3/doctest/](https://pymotw.com/3/doctest/)
+Check out the examples here: [https://pymotw.com/3/doctest/](https://pymotw.com/3/doctest/)
 
 ### Exercise
 
