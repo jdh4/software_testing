@@ -43,3 +43,5 @@ test_sample.py:7: AssertionError
 FAILED test_sample.py::test_answer - assert 4 == 5
 ====================================== 1 failed in 0.10s ======================================
 ```
+
+To run the `test_` files in the current directory you can call `pytest` without any arguments.
