@@ -204,7 +204,7 @@ Check out the examples here: [https://pymotw.com/3/doctest/](https://pymotw.com/
 
 Try writing tests using [`doctest`](https://docs.python.org/3/library/doctest.html) for the code below for for a piece of code you use for your research:
 
-```
+```python
 import math
 
 def circle_area(radius):
