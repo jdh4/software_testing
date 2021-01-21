@@ -1,8 +1,10 @@
-# boost.test for C++ projects
+# Boost.Test
+
+Boost.Test is a popular framework for writing tests for C++ code.
 
 ## Della
 
-See the documentation for [version 1.73](https://www.boost.org/doc/libs/1_73_0/libs/test/doc/html/boost_test/intro.html).
+See the documentation for [version 1.73](https://www.boost.org/doc/libs/1_73_0/libs/test/doc/html/boost_test/intro.html). Consider the following simple test:
 
 ```C++
 #define BOOST_TEST_MODULE My Test
@@ -16,7 +18,7 @@ BOOST_AUTO_TEST_CASE(first_test)
 }
 ```
 
-To compile and run:
+To compile and run the test:
 
 ```bash
 $ module load boost/1.73.0
