@@ -18,7 +18,8 @@ BOOST_AUTO_TEST_CASE(first_test)
 
 To compile and run:
 
-```
+```bash
+$ module load boost/1.73.0
 $ g++ test_file.cpp 
 $ ./a.out 
 Running 1 test case...
@@ -26,3 +27,7 @@ test_file.cpp(8): error: in "first_test": check i == 2 has failed [1 != 2]
 
 *** 1 failure is detected in the test module "My Test" 
 ```
+
+## Adroit
+
+Adroit presently has only version 1.53 of the Boost libraries. Here is the corresponding documentation.
