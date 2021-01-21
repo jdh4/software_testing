@@ -1,7 +1,6 @@
 # Non-Functional Testing
 
-Everything up to this point has been functional testing where we have looked to see if the outputs agree with the expect outputs. Non-functional
-testing looks at other aspects such as computational complexity, scalability, etc.
+Everything up to this point has been functional testing where we have looked to see if the outputs agree with the expected outputs. Non-functional testing looks at other aspects such as computational complexity, scalability, etc.
 
 ## Computation complexity
 
